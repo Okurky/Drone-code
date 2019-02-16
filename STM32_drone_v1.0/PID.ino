@@ -37,3 +37,29 @@ void pidP() {
   
   
 }*/
+/*
+float countError(float pitchInternal){
+  if (pitchInternal > 5)errorValue = -1;    //omezeni maximalniho naklonu
+  else if (pitchInternal < 5)errorInternal = 1;
+  else errorInternal = map(pitchInternal,-5.00,5.00,1.000,-1.000);
+  return errorInternal;
+}
+//  uhel -5 tupnu, dron na naklopen dozadu errorValue je jedna, pokus o naklon dopredu je maximalni
+//  PROPORCNI SLOZKA     pitch_p = parametr * setPoint
+float pitch; //values in range from -50 to 50.....naklon dozadu kladna hodnota
+float errorValue;  //jaká je požadovaná hodnota
+float parametr_I = 100; //od oka tipnuto
+float pitch_P = parametr*countError(); //navisime hodnotu motorů...kladne dopredu, zaporne dozadu
+//  INTERGRACNI SLOZKA    pitch_i = parametr + celkova odchylka/celkovy cas
+float parametr_I = 0.1;//jak jinak nez tip :)
+float sumError += errorValue();
+float pitch_I = sumError/millis();//potreba poresit preteceni obou hodnot
+//  DERIVACNI SLOZKA      
+float parametr_D = 20; //tip
+float firstTime = millis()
+float firstError = countError();
+delay(5);//fakt hnusny reseni, ale mega kratky prozatim a nebude to tak rychly alespon
+float secondError = countError();//zmeri 
+float timeDifference = millis() - firstTime;
+float pitch_D = parametr_D * (firstError - secondError)/timeDifference;
+*/
